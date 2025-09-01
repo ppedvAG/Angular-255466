@@ -1,0 +1,16 @@
+<div class="flex">
+  <!-- Wir koennen ng-container verwenden, um den Source Code uebersichtlich zu halten -->
+  <ng-container *ngFor="let dish of dishes">
+    <app-card [dish]="dish" (ordered)="updateStatus($event, 'Order')">
+      <img [src]="dish.imagePath" alt="Pizza" />
+
+      <div *ngIf="dish.remarks" class="remarks">
+        {{ dish.remarks }}
+      </div>
+    </app-card>
+  </ng-container>
+</div>
+
+<p>{{ status }}</p>
+
+<app-rating [rating]="3" (ratingChanged)="updateStatus($event, 'Rating')"></app-rating>

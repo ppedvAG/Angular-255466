@@ -1,14 +1,18 @@
-<app-card title="Pizza" [price]="8.99" (ordered)="updateStatus($event, 'Order')">
-  <img src="pizza.svg" alt="Pizza" />
-</app-card>
+<div class="flex">
+  <!-- Wir koennen ng-container verwenden, um den Source Code uebersichtlich zu halten -->
+  @for (dish of dishes; track $index) {
+  <app-card [dish]="dish" (ordered)="updateStatus($event, 'Order')">
+    <img [src]="dish.imagePath" alt="Pizza" />
 
-<app-card title="Pasta" [price]="10.99" (ordered)="updateStatus($event, 'Order')">
-  <img src="pasta.svg" alt="Pasta" />
-</app-card>
+    @if (dish.remarks) {
+    <div class="remarks">
+      {{ dish.remarks }}
+    </div>
+    }
+  </app-card>
 
-<app-card title="Salat" [price]="6.5" (ordered)="updateStatus($event, 'Order')">
-  <img src="salad.svg" alt="Salat" />
-</app-card>
+  }
+</div>
 
 <p>{{ status }}</p>
 

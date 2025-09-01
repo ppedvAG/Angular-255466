@@ -7,10 +7,10 @@ import { Dish } from '../../models/dish.model';
 @Component({
   selector: 'app-overview',
   imports: [Rating, Card, CommonModule],
-  templateUrl: './overview.html',
-  styleUrl: './overview.css',
+  templateUrl: './overview-old.html',
+  styleUrl: '../overview/overview.css',
 })
-export class Overview {
+export class OverviewOld {
   status = '';
 
   readonly dishes: Dish[] = [
