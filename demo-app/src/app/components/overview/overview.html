@@ -1,0 +1,15 @@
+<app-card title="Pizza" [price]="8.99" (ordered)="updateStatus($event, 'Order')">
+  <img src="pizza.svg" alt="Pizza" />
+</app-card>
+
+<app-card title="Pasta" [price]="10.99" (ordered)="updateStatus($event, 'Order')">
+  <img src="pasta.svg" alt="Pasta" />
+</app-card>
+
+<app-card title="Salat" [price]="6.5" (ordered)="updateStatus($event, 'Order')">
+  <img src="salad.svg" alt="Salat" />
+</app-card>
+
+<p>{{ status }}</p>
+
+<app-rating [rating]="3" (ratingChanged)="updateStatus($event, 'Rating')"></app-rating>
