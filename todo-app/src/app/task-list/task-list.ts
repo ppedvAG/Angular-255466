@@ -1,4 +1,4 @@
-import { Component, viewChild } from '@angular/core';
+import { Component, ElementRef, viewChild } from '@angular/core';
 import { TaskItem } from '../../lib/models/task-item';
 import { TaskItemComponent } from '../task-item/task-item';
 import { StatusElementComponent } from '../shared/status-element/status-element';
@@ -13,13 +13,13 @@ export class TaskListComponent {
   // @ViewChild('formRef') formRef!: ElementRef<HTMLFormElement>;
 
   // mit signals
-  formRef = viewChild<HTMLFormElement>('formRef');
+  formRef = viewChild<ElementRef<HTMLFormElement>>('formRef');
 
   get valid() {
     // return this.formRef?.nativeElement.checkValidity();
 
     // mit signals
-    return this.formRef()?.checkValidity();
+    return this.formRef()?.nativeElement.checkValidity();
   }
 
   taskList = [
@@ -49,7 +49,7 @@ export class TaskListComponent {
       this.setStatus(`${this.taskList.length} Aufgaben insgesamt`);
 
       // mit signals
-      this.formRef()?.reset();
+      this.formRef()?.nativeElement.reset();
     }
   }
 
