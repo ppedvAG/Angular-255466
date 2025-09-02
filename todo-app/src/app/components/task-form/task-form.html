@@ -1,9 +1,3 @@
-<ul>
-  @for (task of taskList; track $index) {
-  <li title="#{{ $index }}"><app-task-item [item]="task" /></li>
-  }
-</ul>
-
 <form #formRef class="grid">
   <label for="title">Aufgabe</label>
   <input
@@ -16,10 +10,3 @@
   <br />
   <button (click)="addTask($event, titleRef.value)">Neue Aufgabe</button>
 </form>
-
-@if (status) {
-<app-status-element>
-  <span title>Information</span>
-  {{ status }}
-</app-status-element>
-}

@@ -1,10 +1,11 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { TaskListComponent } from './task-list/task-list';
+import { TaskListComponent } from './components/task-list/task-list';
+import { ToastListComponent } from './shared/toast-list/toast-list';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, TaskListComponent],
+  imports: [RouterOutlet, TaskListComponent, ToastListComponent],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
