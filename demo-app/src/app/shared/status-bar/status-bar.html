@@ -1,5 +1,5 @@
 @for(item of service.messages; track $index) {
-<div class="message">
+<p class="status" [style.bottom.em]="$index * 2">
   {{ item }}
-</div>
+</p>
 }
