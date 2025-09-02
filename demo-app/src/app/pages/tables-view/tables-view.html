@@ -1,4 +1,4 @@
-@if(currentTable !== 0) {
+@if((currentTable$ | async) !== 0) {
 <div class="table">
   <h2>Tisch {{ currentTable$ | async }}</h2>
   <span>Bestellt am {{ getOrderDate() | date : "d. MMMM y 'um' HH:mm 'Uhr'" }}</span>

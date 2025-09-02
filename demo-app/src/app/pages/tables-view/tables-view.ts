@@ -20,7 +20,7 @@ export class TablesView implements OnInit, OnDestroy {
   // Bessere Alternative in Kombination mit async Pipe im Template
   public currentTable$ = of(0);
   // statt in ngOnInit mittels subscribe zu initialisieren
-  public currentTable = 0;
+  private currentTable = 0;
 
   private subscription?: Subscription;
 

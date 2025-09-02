@@ -4,6 +4,7 @@ import { NotFound } from './pages/not-found/not-found';
 import { TablesView } from './pages/tables-view/tables-view';
 import { Login } from './pages/login/login';
 import { Register } from './pages/register/register';
+import { loginGuard, loginGuardAsync } from './guards/login-guard';
 
 export const routes: Routes = [
   {
@@ -14,6 +15,7 @@ export const routes: Routes = [
   {
     path: 'overview',
     component: Overview,
+    canActivate: [loginGuard],
   },
   {
     path: 'tables/:id',

@@ -1,19 +1,22 @@
 <nav>
   <ul>
-    <li><a [routerLink]="['/login']">Login</a></li>
+    @if(accountService.loggedIn$ | async) {
+
     <li><a [routerLink]="['/overview']">Bestellen</a></li>
     @for (no of orderService.tables; track no) {
     <li>
       <a [routerLink]="['/tables', no]">Tisch {{ no }}</a>
     </li>
+    } } @else {
+    <li><a [routerLink]="['/login']">Login</a></li>
     }
   </ul>
 </nav>
 
 <main class="main">
-  <details>
+  <details *ngIf="accountService.currentUserName$ | async as title">
     <summary>
-      <b>Hello, {{ title }}</b>
+      <b> Hello, {{ title }} </b>
     </summary>
     From property: {{ titleProp }}<br />
     From signal: {{ titleFunc() }}
