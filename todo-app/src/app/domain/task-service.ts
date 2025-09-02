@@ -1,5 +1,8 @@
 import { Injectable, signal } from '@angular/core';
 import { TaskItem } from '../../lib/models/task-item';
+import { DateTime } from 'luxon';
+
+const inTwoDays = DateTime.now().plus({ day: 2 }).toJSDate();
 
 @Injectable({
   providedIn: 'root',
@@ -7,12 +10,18 @@ import { TaskItem } from '../../lib/models/task-item';
 export class TaskService {
   readonly items = signal<TaskItem[]>([
     {
+      id: '1',
       title: 'Angular Kurs absolvieren',
       priority: 'important',
-      dueDate: new Date(),
+      dueDate: inTwoDays,
       labels: ['angular', 'kurs'],
+      completed: false,
     } as TaskItem,
   ]);
+
+  getTask(id: string): TaskItem | undefined {
+    return this.items().find((t) => t.id === id);
+  }
 
   addTask(task: Omit<TaskItem, 'id' | 'completed'>) {
     const newTask: TaskItem = {

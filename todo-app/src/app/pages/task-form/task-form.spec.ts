@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { StatusElementComponent } from './status-element';
+import { TaskFormComponent } from './task-form';
 
-describe('StatusElementComponent', () => {
-  let component: StatusElementComponent;
-  let fixture: ComponentFixture<StatusElementComponent>;
+describe('TaskFormComponent', () => {
+  let component: TaskFormComponent;
+  let fixture: ComponentFixture<TaskFormComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [StatusElementComponent],
+      imports: [TaskFormComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(StatusElementComponent);
+    fixture = TestBed.createComponent(TaskFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
