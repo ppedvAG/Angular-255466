@@ -10,7 +10,7 @@ import { TablesView } from '../tables-view/tables-view';
 
 @Component({
   selector: 'app-overview',
-  imports: [Rating, Card, CommonModule, TablesView],
+  imports: [Card, CommonModule, TablesView],
   templateUrl: './overview.html',
   styleUrl: './overview.css',
 })
