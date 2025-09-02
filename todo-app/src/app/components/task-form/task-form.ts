@@ -17,7 +17,7 @@ export class TaskFormComponent {
 
   constructor(private taskService: TaskService, private toastService: ToastService) {}
 
-  addTask(e: Event, title: string) {
+  addTask(e: Event, title: string, dueDate: Date | null = null) {
     e.preventDefault();
 
     if (!this.valid) {
@@ -25,6 +25,7 @@ export class TaskFormComponent {
     } else {
       this.taskService.addTask({
         title,
+        dueDate: dueDate ?? undefined,
         priority: 'default',
       });
 

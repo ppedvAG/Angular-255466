@@ -7,6 +7,8 @@
     required
     (input.enter)="addTask($event, titleRef.value)"
   />
+  <label for="dueDate">Fälligkeit</label>
+  <input id="dueDate" #dueDateRef type="date" />
   <br />
-  <button (click)="addTask($event, titleRef.value)">Neue Aufgabe</button>
+  <button (click)="addTask($event, titleRef.value, dueDateRef.valueAsDate)">Neue Aufgabe</button>
 </form>
