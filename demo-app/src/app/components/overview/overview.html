@@ -1,7 +1,7 @@
 <div class="flex">
   <!-- Wir koennen ng-container verwenden, um den Source Code uebersichtlich zu halten -->
   @for (dish of dishes; track $index) {
-  <app-card [dish]="dish" (ordered)="updateStatus($event, 'Order')">
+  <app-card [dish]="dish" (ordered)="addOrder($event)">
     <img [src]="dish.imagePath" alt="Pizza" />
 
     @if (dish.remarks) {
@@ -14,6 +14,4 @@
   }
 </div>
 
-<p>{{ status }}</p>
-
-<app-rating [rating]="3" (ratingChanged)="updateStatus($event, 'Rating')"></app-rating>
+<app-tables-view></app-tables-view>

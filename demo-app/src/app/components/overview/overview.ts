@@ -1,48 +1,35 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { Rating } from '../rating/rating';
-import { Card } from '../card/card';
+import { Card, OrderEventArg } from '../card/card';
+import { ProductService } from '../../domain/product-service';
+import { OrderService } from '../../domain/order-service';
 import { Dish } from '../../models/dish.model';
+import { MessageService } from '../../domain/message-service';
+import { TablesView } from '../tables-view/tables-view';
 
 @Component({
   selector: 'app-overview',
-  imports: [Rating, Card, CommonModule],
+  imports: [Rating, Card, CommonModule, TablesView],
   templateUrl: './overview.html',
   styleUrl: './overview.css',
 })
 export class Overview {
-  status = '';
+  // mit private, public oder protected als Keywords
+  // wird implizit das Backingfield angelegt und sparen
+  // uns die Deklaration sowie die Initialisierung
+  constructor(
+    private productService: ProductService,
+    private orderService: OrderService,
+    private messageService: MessageService
+  ) {}
 
-  readonly dishes: Dish[] = [
-    {
-      title: 'Pizza',
-      course: 'mains',
-      price: 8.95,
-      imagePath: 'pizza.svg',
-      remarks: 'Empfehlung',
-    },
-    {
-      title: 'Pasta',
-      course: 'mains',
-      price: 10.89,
-      imagePath: 'pasta.svg',
-    },
-    {
-      title: 'Salat',
-      course: 'starters',
-      price: 5.99,
-      imagePath: 'salad.svg',
-      remarks: 'Angebot',
-    },
-    {
-      title: 'Cupcake',
-      course: 'desserts',
-      price: 3.99,
-      imagePath: 'cake.svg',
-    },
-  ];
+  get dishes() {
+    return this.productService.getDishes();
+  }
 
-  updateStatus<T>(event: T, type: string) {
-    this.status = `${type}: ${JSON.stringify(event)}`;
+  addOrder(args: OrderEventArg) {
+    this.orderService.addOrder(args.tableNo, args.dish);
+    this.messageService.addMessage(`${args.dish.title} an Tisch ${args.tableNo} bestellt!`);
   }
 }
