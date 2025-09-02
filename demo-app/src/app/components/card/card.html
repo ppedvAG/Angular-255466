@@ -5,12 +5,40 @@
   <label>Gericht</label>
   <span>{{ title() }}</span>
   <label>Preis</label>
-  <span>{{ price() }}</span>
+
+  <!-- <ng-container *ngIf="price() < 6; else priceTemplate">
+    <span appHighlight="yellow">
+      <ng-container *ngTemplateOutlet="priceTemplate"></ng-container>
+    </span>
+  </ng-container>
+  <label>Preis</label> -->
+
+  @if (price() < 6) {
+  <span appHighlight="yellow">
+    <ng-container *ngTemplateOutlet="priceTemplate"></ng-container>
+  </span>
+  } @else {
+  <span>
+    <ng-container *ngTemplateOutlet="priceTemplate"></ng-container>
+  </span>
+  }
+
   <label>Tisch-Nr.</label>
   <input type="number" #inputRef min="1" max="12" value="1" />
   <div class="actions">
     <button (click)="order(+inputRef.value)">Bestellen</button>
   </div>
+  <br />
+  @if(dish().description) {
+  <details class="col-span-3">
+    <summary class="center"><label>Beschreibung</label></summary>
+    <span class="description" [innerHTML]="dish().description! | marked | sanitize"> </span>
+  </details>
+  }
 
   <ng-content select="remark"></ng-content>
 </div>
+
+<ng-template #priceTemplate>
+  {{ price() | currency : 'EUR' : 'symbol' : '1.2-2' }}
+</ng-template>

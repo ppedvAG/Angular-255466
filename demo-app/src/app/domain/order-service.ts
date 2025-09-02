@@ -35,8 +35,12 @@ export class OrderService {
       .reduce(distinctAndCount, [] as DishInfo);
   }
 
-  getPriceByTable(currentTable: number) {
+  getPriceByTable(currentTable: number): number {
     return this.getByTable(currentTable).reduce((acc, item) => acc + item.price, 0);
+  }
+
+  getOrderDateByTable(currentTable: number): Date {
+    return this.orders[currentTable]?.date ?? '';
   }
 
   addOrder(tableNo: number, dish: Dish) {

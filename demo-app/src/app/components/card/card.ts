@@ -1,12 +1,15 @@
 import { Component, computed, input, output } from '@angular/core';
-import { NgClass } from '@angular/common';
+import { CommonModule, NgClass } from '@angular/common';
 import { Dish } from '../../models/dish.model';
+import { MarkedPipe } from '../../pipes/marked-pipe';
+import { SanitizePipe } from '../../pipes/sanitize-pipe';
+import { Highlight } from '../../directive/highlight';
 
 export type OrderEventArg = { dish: Dish; tableNo: number };
 
 @Component({
   selector: 'app-card',
-  imports: [NgClass],
+  imports: [NgClass, CommonModule, MarkedPipe, SanitizePipe, Highlight],
   templateUrl: './card.html',
   styleUrl: './card.css',
 })

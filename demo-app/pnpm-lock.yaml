@@ -23,6 +23,9 @@ dependencies:
   '@angular/router':
     specifier: ^20.2.0
     version: 20.2.3(@angular/common@20.2.3)(@angular/core@20.2.3)(@angular/platform-browser@20.2.3)(rxjs@7.8.2)
+  marked:
+    specifier: ^16.2.1
+    version: 16.2.1
   rxjs:
     specifier: ~7.8.0
     version: 7.8.2
@@ -3736,6 +3739,12 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
+
+  /marked@16.2.1:
+    resolution: {integrity: sha512-r3UrXED9lMlHF97jJByry90cwrZBBvZmjG1L68oYfuPMW+uDTnuMbyJDymCWwbTE+f+3LhpNDKfpR3a3saFyjA==}
+    engines: {node: '>= 20'}
+    hasBin: true
+    dev: false
 
   /math-intrinsics@1.1.0:
     resolution: {integrity: sha512-/IXtbwEk5HTPyEwyKX6hGkYXxM9nbj64B+ilVJnC/R6B0pH5G4V3b0pVbL7DBj4tkhBAppbQUlf6F6Xl9LHu1g==}

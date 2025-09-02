@@ -12,12 +12,14 @@ export class ProductService {
       price: 8.95,
       imagePath: 'pizza.svg',
       remarks: 'Empfehlung',
+      description: '**Pizza** mit Kaese, Salami, Schinken und Oliven',
     },
     {
       title: 'Pasta',
       course: 'mains',
       price: 10.89,
       imagePath: 'pasta.svg',
+      description: 'Salat mit Kartoffeln, Zwiebeln, Karotten und `Pommes Frites`',
     },
     {
       title: 'Salat',
