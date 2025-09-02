@@ -1,16 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { Rating } from '../rating/rating';
-import { Card, OrderEventArg } from '../card/card';
 import { ProductService } from '../../domain/product-service';
 import { OrderService } from '../../domain/order-service';
-import { Dish } from '../../models/dish.model';
 import { MessageService } from '../../domain/message-service';
-import { TablesView } from '../tables-view/tables-view';
+import { Card, OrderEventArg } from '../../components/card/card';
 
 @Component({
   selector: 'app-overview',
-  imports: [Card, CommonModule, TablesView],
+  imports: [CommonModule, Card],
   templateUrl: './overview.html',
   styleUrl: './overview.css',
 })

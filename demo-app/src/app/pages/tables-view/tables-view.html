@@ -1,8 +1,6 @@
-@for (i of orderService.tables; track i) {
-
-<button (click)="setTable(i)">Tisch # {{ i }}</button>
-} @if(currentTable !== 0) {
+@if(currentTable !== 0) {
 <div class="table">
+  <h2>Tisch {{ currentTable$ | async }}</h2>
   <span>Bestellt am {{ getOrderDate() | date : "d. MMMM y 'um' HH:mm 'Uhr'" }}</span>
   <ul>
     @for(title of getTitles(); track $index) {

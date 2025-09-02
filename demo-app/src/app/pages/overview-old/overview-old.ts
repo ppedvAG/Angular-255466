@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { Rating } from '../rating/rating';
-import { Card } from '../card/card';
 import { Dish } from '../../models/dish.model';
+import { Rating } from '../../components/rating/rating';
+import { Card } from '../../components/card/card';
 
 @Component({
   selector: 'app-overview',
