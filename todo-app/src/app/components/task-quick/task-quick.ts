@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { TaskItem } from '../../../lib/models/task-item';
-import { TaskService } from '../../domain/task-service';
+import { TaskRemoteService } from '../../domain/task-remote.service';
 import { ToastService } from '../../domain/toast-service';
 
 @Component({
@@ -15,7 +15,7 @@ export class TaskQuickComponent {
 
   editing = false;
 
-  constructor(private taskService: TaskService, private toastService: ToastService) {}
+  constructor(private taskService: TaskRemoteService, private toastService: ToastService) {}
 
   get creating() {
     return !this.task.id;

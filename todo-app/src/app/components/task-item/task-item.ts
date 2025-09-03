@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { TaskItem } from '../../../lib/models/task-item';
-import { TaskService } from '../../domain/task-service';
+import { TaskRemoteService } from '../../domain/task-remote.service';
 import { RelativeDatePipe } from '../../pipes/relative-date-pipe';
 import { TaskQuickComponent } from '../task-quick/task-quick';
 
@@ -15,7 +15,7 @@ import { TaskQuickComponent } from '../task-quick/task-quick';
 export class TaskItemComponent {
   @Input() item = { title: 'Nicht angegeben' } as TaskItem;
 
-  constructor(private taskService: TaskService, private router: Router) {}
+  constructor(private taskService: TaskRemoteService, private router: Router) {}
 
   editTask(id: string) {
     this.router.navigate(['/edit', id]);
