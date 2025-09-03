@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { map, Observable } from 'rxjs';
 import { MealType, Recipe } from '../models/recipe.model';
 
-const url = 'https://dummyjson.com/recipes?limit=8&skip=0';
+export const url = 'https://dummyjson.com/recipes?limit=8&skip=0';
 
 function toCourse(type: MealType[]): Course {
   if (type.includes('Side Dish')) {

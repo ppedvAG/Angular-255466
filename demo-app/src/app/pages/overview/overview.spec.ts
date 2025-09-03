@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { Overview } from './overview';
+import { ProductService } from '../../domain/product-service';
+import { of } from 'rxjs';
 
 describe('Overview', () => {
   let component: Overview;
@@ -8,9 +10,16 @@ describe('Overview', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Overview]
-    })
-    .compileComponents();
+      imports: [Overview],
+      providers: [
+        {
+          provide: ProductService,
+          useValue: {
+            getDishes: () => of([]),
+          },
+        },
+      ],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(Overview);
     component = fixture.componentInstance;
