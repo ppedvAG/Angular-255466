@@ -7,10 +7,11 @@ import { Card, OrderEventArg } from '../../components/card/card';
 import { BehaviorSubject, startWith, Subscription } from 'rxjs';
 import { Dish } from '../../models/dish.model';
 import { toSignal } from '@angular/core/rxjs-interop';
+import { Chat } from '../../components/chat/chat';
 
 @Component({
   selector: 'app-overview',
-  imports: [CommonModule, Card],
+  imports: [CommonModule, Card, Chat],
   templateUrl: './overview.html',
   styleUrl: './overview.css',
 })
