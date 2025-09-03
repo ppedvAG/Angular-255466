@@ -43,6 +43,9 @@
 -   [ ] RoutingModule: Paths, Endpoints, Redirections
 -   [ ] router-outlet & routerLink
 -   [ ] Route & ActivatedRoute für Parameter aus URI
+-   [ ] [RxJS Interop](https://angular.dev/guide/signals/rxjs-interop)
+-   [ ] [Observables](https://rxjs.dev/)
+-   [ ] Observables als Signals
 -   [ ] Guards
 
 ## M007 | [FORMS](https://angular.dev/guide/forms)
@@ -53,17 +56,11 @@
 -   [ ] ViewChildren, QueryList<ElementRef> & ChangeDetectorRef
 -   [ ] [Template-driven with ngModel](https://angular.dev/guide/forms/template-driven-forms)
 
-## M008 | [ASYNC CODING & RxJS](https://rxjs.dev/)
+## M008 | HTTP CLIENT
 
--   [ ] Observables
+-   [ ] [Observables](https://rxjs.dev/)
 -   [ ] [HttpClienModule](https://angular.dev/guide/http)
--   [ ] [RxJS Interop](https://angular.dev/guide/signals/rxjs-interop)
 -   [ ] WebSockets
-
-## M009 | [MODULES](https://angular.dev/guide/understanding-angular-overview)
-
--   [ ] ng modules
--   [ ] shared-modul
 
 ## M010 | [TESTING](https://angular.dev/guide/testing)
 
@@ -71,6 +68,12 @@
 -   [ ] Spec-files
 -   [ ] Providers
 -   [ ] Mocking mit Spy
+
+## M100 | LEGACY
+
+-   [ ] [Module in Angular](https://angular.dev/guide/understanding-angular-overview)
+-   [ ] ng modules
+-   [ ] shared-modul
 
 <!--
 

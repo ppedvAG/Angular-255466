@@ -1,1 +1,15 @@
-<button (click)="loginAsGuest()">Als Gast einloggen</button>
+<div class="grid-2">
+  <label for="username">Benutzername</label>
+  <input id="username" type="text" [(ngModel)]="credentials.username" />
+
+  <label for="password">Kennwort</label>
+  <input id="password" type="password" [(ngModel)]="credentials.password" />
+  <br />
+  <button (click)="login()">Anmelden</button>
+  <a role="button" routerLink="/register">Registrieren</a>
+  <button (click)="loginAsGuest()">Als Gast einloggen</button>
+</div>
+
+@if (error) {
+<p class="error">{{ error }}</p>
+}
