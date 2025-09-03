@@ -1,6 +1,8 @@
 <div class="flex">
-  <!-- Wir koennen ng-container verwenden, um den Source Code uebersichtlich zu halten -->
-  @for (dish of dishes; track $index) {
+  <!-- Ueber Observables -->
+  <!-- @for (dish of dishes$ | async; track $index) { -->
+  <!-- Ueber Signals -->
+  @for (dish of dishes(); track $index) {
   <app-card [dish]="dish" (ordered)="addOrder($event)">
     <img [src]="dish.imagePath" alt="Pizza" />
 
