@@ -4,10 +4,11 @@ import { Router } from '@angular/router';
 import { TaskItem } from '../../../lib/models/task-item';
 import { TaskService } from '../../domain/task-service';
 import { RelativeDatePipe } from '../../pipes/relative-date-pipe';
+import { TaskQuickComponent } from '../task-quick/task-quick';
 
 @Component({
   selector: 'app-task-item',
-  imports: [CommonModule, RelativeDatePipe],
+  imports: [CommonModule, TaskQuickComponent, RelativeDatePipe],
   templateUrl: './task-item.html',
   styleUrl: './task-item.css',
 })
